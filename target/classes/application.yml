@@ -7,15 +7,12 @@ spring:
 
 # 关闭定时任务JOB
 flowable:
+  standalone:
+    server:
+      enabled: false # standalone 模式
   async-executor-activate: false
   # 将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。
   database-schema-update: true
-  common:
-    app:
-      security:
-        type: idm
-      role-prefix:
-      idm-admin:
-        user: admin
-        password: 123456
+  idm:
+    enabled: false
 
